@@ -1,1 +1,3 @@
 *.idx
+.local
+.ipynb_checkpoints
