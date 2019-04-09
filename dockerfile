@@ -96,23 +96,23 @@ RUN tar -zxvf ${ECCODES}.tar.gz
 
 RUN cd ${ECCODES} && mkdir build && cd build && cmake .. && make -j2 && make install
 
-#ENV HTTP=https://github.com/matplotlib/basemap/archive \
-#  BASEMAP=1.2.0rel
-#RUN cd /tmp && wget --output-document=v${BASEMAP}.tar.gz ${HTTP}/v${BASEMAP}.tar.gz
+ENV HTTP=https://github.com/matplotlib/basemap/archive \
+  BASEMAP=1.2.0rel
+RUN cd /tmp && wget --output-document=v${BASEMAP}.tar.gz ${HTTP}/v${BASEMAP}.tar.gz
 
-#RUN tar xzf v${BASEMAP}.tar.gz
-#RUN export GEOS_DIR=/tmp/GEOS
-#ENV GEOS_DIR=/tmp/GEOS
-#RUN mkdir -p ${GEOS_DIR}
-#RUN cd /tmp 
-#ENV HTTP=http://download.osgeo.org/geos \
-#   GEOS=geos-3.6.2
-#RUN cd /tmp && wget --output-document=${GEOS}.tar.bz2 ${HTTP}/${GEOS}.tar.bz2
-#RUN tar xf ${GEOS}.tar.bz2
-#RUN cd ${GEOS} && pwd && ls
-#RUN /tmp/${GEOS}/configure --prefix=${GEOS_DIR}
-#RUN make --silent  && make install --silent
-#RUN ls /tmp && cd /tmp/basemap-${BASEMAP} && python setup.py install
+RUN tar xzf v${BASEMAP}.tar.gz
+RUN export GEOS_DIR=/tmp/GEOS
+ENV GEOS_DIR=/tmp/GEOS
+RUN mkdir -p ${GEOS_DIR}
+RUN cd /tmp 
+ENV HTTP=http://download.osgeo.org/geos \
+   GEOS=geos-3.6.2
+RUN cd /tmp && wget --output-document=${GEOS}.tar.bz2 ${HTTP}/${GEOS}.tar.bz2
+RUN tar xf ${GEOS}.tar.bz2
+RUN cd ${GEOS} && pwd && ls
+RUN /tmp/${GEOS}/configure --prefix=${GEOS_DIR}
+RUN make --silent  && make install --silent
+RUN ls /tmp && cd /tmp/basemap-${BASEMAP} && python setup.py install
 
 
 #
