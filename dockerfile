@@ -203,5 +203,5 @@ USER $NB_UID
 # Configure Python runtime.
 ENV \
 	PYTHONDONTWRITEBYTECODE=1 \
-	PYTHONPATH=/usr/local/lib/python3.6/site-packages \
+	PYTHONPATH=/home/jovyan:/usr/local/lib/python3.6/site-packages \
 PYTHONUNBUFFERED=1
