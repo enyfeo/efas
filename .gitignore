@@ -1,3 +1,6 @@
 *.idx
 .local
 .ipynb_checkpoints
+.ipython
+.cache
+.jupyter
