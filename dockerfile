@@ -71,7 +71,8 @@ RUN set -ex \
 	https://github.com/matplotlib/basemap/archive/master.zip \
         netcdf4==1.5.0 \
         cdsapi==0.1.1 \
-	cfgrib==0.9.6.post1 \
+	cython==0.29.6 \
+        cfgrib==0.9.6.post1 \
 	ecmwf-api-client==1.4.2 \
 	ipyleaflet==0.9.1 \
 	ipywidgets==7.4.2 \
@@ -113,6 +114,9 @@ RUN cd ${GEOS} && pwd && ls
 RUN /tmp/${GEOS}/configure --prefix=${GEOS_DIR}
 RUN make --silent  && make install --silent
 RUN ls /tmp && cd /tmp/basemap-${BASEMAP} && python setup.py install
+
+RUN cd /tmp && git clone https://github.com/SciTools/cartopy.git
+RUN cd cartopy &&  python setup.py install
 
 
 #
