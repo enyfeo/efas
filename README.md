@@ -16,7 +16,7 @@ In order to clone this repository use :
 In order to provide the correct environment we have provided a docker file that you can download within this git repository.
 
 You will need to download an appropriate docker installation for your system.
-Information can be found here [https://docs.docker.com/install](Docker Hub - Docker CE).
+Information can be found here [Docker Hub Install - Docker CE](https://docs.docker.com/install/).
 
 Once you have installed the docker software, you will need the docker image.
 
