@@ -16,7 +16,7 @@ Information can be found here.
 
 Once you have installed the docker software, you will need to build the docker image.
 
-docker build . -t efas -f ./dockerfile
+docker build docker -t efas -f docker/dockerfile
 
 This will take a while to build items like Basemap and GEOS
 

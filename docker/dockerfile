@@ -68,7 +68,7 @@ RUN set -ex \
 # Install Python modules.
 RUN set -ex \
 	&& pip install \
-	https://github.com/matplotlib/basemap/archive/master.zip \
+        git+https://github.com/matplotlib/basemap.git \
         netcdf4==1.5.0 \
         cdsapi==0.1.1 \
 	cython==0.29.6 \
@@ -82,11 +82,11 @@ RUN set -ex \
 	notebook==5.7.0 \
 	numpy==1.15.2 \
 	pandas==0.23.4 \
+        pyproj==1.9.6 \
 	scipy==1.1.0 \
 	xarray==0.11.0 \
 	&& fix-permissions $CONDA_DIR \
 	&& fix-permissions /home/$NB_USER
-
 
 WORKDIR /tmp
 
@@ -97,11 +97,11 @@ RUN tar -zxvf ${ECCODES}.tar.gz
 
 RUN cd ${ECCODES} && mkdir build && cd build && cmake .. && make -j2 && make install
 
-ENV HTTP=https://github.com/matplotlib/basemap/archive \
-  BASEMAP=1.2.0rel
-RUN cd /tmp && wget --output-document=v${BASEMAP}.tar.gz ${HTTP}/v${BASEMAP}.tar.gz
+#ENV HTTP=https://github.com/matplotlib/basemap/archive \
+#  BASEMAP=1.2.0rel
+#RUN cd /tmp && wget --output-document=v${BASEMAP}.tar.gz ${HTTP}/v${BASEMAP}.tar.gz
 
-RUN tar xzf v${BASEMAP}.tar.gz
+#RUN tar xzf v${BASEMAP}.tar.gz
 RUN export GEOS_DIR=/tmp/GEOS
 ENV GEOS_DIR=/tmp/GEOS
 RUN mkdir -p ${GEOS_DIR}
@@ -113,7 +113,7 @@ RUN tar xf ${GEOS}.tar.bz2
 RUN cd ${GEOS} && pwd && ls
 RUN /tmp/${GEOS}/configure --prefix=${GEOS_DIR}
 RUN make --silent  && make install --silent
-RUN ls /tmp && cd /tmp/basemap-${BASEMAP} && python setup.py install
+#RUN ls /tmp && cd /tmp/basemap-${BASEMAP} && python setup.py install
 
 RUN cd /tmp && git clone https://github.com/SciTools/cartopy.git
 RUN cd cartopy &&  python setup.py install
