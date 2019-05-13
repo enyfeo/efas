@@ -21,11 +21,12 @@ Information can be found here [Docker Hub Install - Docker CE](https://docs.dock
 Once you have installed the docker software, you will need the docker image.
 
 This can be built locally (takes some time to source the packages) using :
-```docker build docker -t efas -f docker/dockerfile```
+
+```docker build docker -t jupyter-cds -f docker/dockerfile```
 
 Once it has completed you can start the container using the conmmand : 
 
-docker run --publish 8888:8888 --volume ./:/home/jovyan/ efas
+docker run --publish 8888:8888 --volume ./:/home/jovyan/ jupyter-cds:latest
 
 As an alternative users who would prefer to install the software directly can follow the instructions here
 
