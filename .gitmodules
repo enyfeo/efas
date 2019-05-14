@@ -1,3 +1,3 @@
 [submodule "efas_netcdf_tool"]
 	path = efas_netcdf_tool
-	url = ssh://git@git.ecmwf.int/efas/efas_netcdf_tool.git
+	url = https://git.ecmwf.int/scm/efas/efas_netcdf_tool.git
