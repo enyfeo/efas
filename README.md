@@ -26,7 +26,7 @@ This can be built locally (takes some time to source the packages) using :
 
 Once it has completed you can start the container using the conmmand : 
 
-docker run --publish 8888:8888 --volume ./:/home/jovyan/ jupyter-cds:latest
+docker run --publish 8888:8888 --volume ${PWD}:/home/jovyan/ jupyter-cds:latest
 
 As an alternative users who would prefer to install the software directly can follow the instructions here
 
