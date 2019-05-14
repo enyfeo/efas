@@ -189,7 +189,8 @@ RUN set -ex \
 	libxml2 \
 	libxslt1.1 \
 	poppler-utils \
-	rsync
+	rsync \
+        texlive-xetex
 
 # Copy build artifacts.
 COPY --from=build /opt/conda/lib/python3.6/site-packages/ /opt/conda/lib/python3.6/site-packages/
