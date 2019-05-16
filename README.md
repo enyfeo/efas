@@ -11,7 +11,7 @@ Calculate and plot the Soil Moisture.
 
 In order to clone this repository use :
 
-```git clone --recurse-submodules htts://github.com/enyfeo/efas.git```
+```git clone --recurse-submodules https://github.com/enyfeo/efas.git```
 
 In order to provide the correct environment we have provided a docker file that you can download within this git repository.
 
@@ -19,6 +19,8 @@ You will need to download an appropriate docker installation for your system.
 Information can be found here [Docker Hub Install - Docker CE](https://docs.docker.com/install/).
 
 Once you have installed the docker software, you will need the docker image.
+
+```docker pull enyfeo/efas:1.0.0```
 
 This can be built locally (takes some time to source the packages) using :
 
