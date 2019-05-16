@@ -1,0 +1,4 @@
+[submodule "efas_netcdf_tool"]
+	path = efas_netcdf_tool
+	url = https://git.ecmwf.int/scm/efas/efas_netcdf_tool.git
+	branch = master
