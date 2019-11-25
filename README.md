@@ -25,8 +25,9 @@ You will need to download an appropriate docker installation for your system.
 Information can be found here [Docker Hub Install - Docker CE](https://docs.docker.com/install/).
 
 Once you have installed the docker software, you will need the docker image.
+It can be pulled from docker hub or built locally. Pulling is faster.
 
-```docker pull enyfeo/efas:1.0.0```
+```docker pull enyfeo/efas:latest```
 
 This can be built locally (takes some time to source the packages) using :
 
