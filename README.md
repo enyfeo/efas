@@ -13,6 +13,12 @@ In order to clone this repository use :
 
 ```git clone --recurse-submodules https://github.com/enyfeo/efas.git```
 
+We have added some data files in the data folder
+
+You will need to 
+
+```git lfs pull``` to retrieve the files
+
 In order to provide the correct environment we have provided a docker file that you can download within this git repository.
 
 You will need to download an appropriate docker installation for your system.
