@@ -35,7 +35,7 @@ This can be built locally (takes some time to source the packages) using :
 
 Once it has completed you can start the container using the conmmand for the image pulled from docker hub: 
 
-```docker run --publish 8888:8888 --volume ${PWD}:/home/jovyan/ enyfeo/efas:1.0.0 start-notebook.sh --NotebookApp.token=''```
+```docker run --publish 8888:8888 --volume ${PWD}:/home/jovyan/ enyfeo/efas:latest start-notebook.sh --NotebookApp.token=''```
 
 Or if you built the image you just have to make sure you match the tag (-t)
 
