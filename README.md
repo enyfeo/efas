@@ -25,17 +25,24 @@ You will need to download an appropriate docker installation for your system.
 Information can be found here [Docker Hub Install - Docker CE](https://docs.docker.com/install/).
 
 Once you have installed the docker software, you will need the docker image.
+
+# Pull the Latest Docker Image
+
 It can be pulled from docker hub or built locally. Pulling is faster.
 
 ```docker pull enyfeo/efas:latest```
 
-This can be built locally (takes some time to source the packages) using :
-
-```docker build docker -t jupyter-cds -f docker/dockerfile```
-
 Once it has completed you can start the container using the conmmand for the image pulled from docker hub: 
 
 ```docker run --publish 8888:8888 --volume ${PWD}:/home/jovyan/ enyfeo/efas:latest start-notebook.sh --NotebookApp.token=''```
+
+N.B. Windows Users should use the path 'c:/efas' or wherever they checkedout the git repository instead of ${PWD}
+
+# Building the Docker Locally
+
+This can be built locally (takes some time to source the packages) using :
+
+```docker build docker -t jupyter-cds -f docker/dockerfile```
 
 Or if you built the image you just have to make sure you match the tag (-t)
 
